@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Registro de Esterilização</title>
+    <link rel="stylesheet" href="./public/styles/main.css" />
+  </head>
+
+  <body>
+    <button class="print-btn" onclick="window.print()">🖨️ Imprimir</button>
+
+    <div class="logo">
+        <img class="logo-img" src="./public/images/logo.png" alt="letras g e m que formam uma logo"/>
+        <h1 class="logo-text">Studio Giselle da Matta</h1>
+    </div>
+
+    <div class="page">
+      <!-- DUPLICADO (como no papel) -->
+      <div class="section">
+        <h2 class="title">REGISTRO OPERACIONAL DE ESTERILIZAÇÃO</h2>
+
+        <div class="line">
+          DATA:
+          <input id="dia1" /> / <input id="mes1" /> /
+          <input id="ano1" />
+        </div>
+
+        <div class="line"><strong>Técnica:</strong> Vapor Saturado</div>
+        <div class="line"><strong>TESTE MICROBIOLÓGICO DO DIA:</strong></div>
+
+        <div class="box">
+          <div contenteditable="true"></div>
+          <div contenteditable="true"><strong>Resultado:</strong></div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>HORÁRIO - INÍCIO</th>
+              <th>RESPONSÁVEL</th>
+              <th>HORÁRIO - FIM</th>
+              <th>RESPONSÁVEL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <script>
+              for (let i = 0; i < 6; i++) {
+                document.write(`
+              <tr>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+              </tr>
+            `);
+              }
+            </script>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- SEGUNDA PARTE -->
+      <div class="section">
+        <h2>REGISTRO OPERACIONAL DE ESTERILIZAÇÃO</h2>
+
+        <div class="line">
+          DATA:
+          <input id="dia2" /> / <input id="mes2" /> /
+          <input id="ano2" />
+        </div>
+
+        <div class="line"><strong>Técnica:</strong> Vapor Saturado</div>
+        <div class="line"><strong>TESTE MICROBIOLÓGICO DO DIA:</strong></div>
+
+        <div class="box">
+          <div contenteditable="true"></div>
+          <div contenteditable="true"><strong>Resultado:</strong></div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>HORÁRIO - INÍCIO</th>
+              <th>RESPONSÁVEL</th>
+              <th>HORÁRIO - FIM</th>
+              <th>RESPONSÁVEL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <script>
+              for (let i = 0; i < 6; i++) {
+                document.write(`
+              <tr>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+              </tr>
+            `);
+              }
+            </script>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      function setToday() {
+        const today = new Date();
+        const d = String(today.getDate()).padStart(2, "0");
+        const m = String(today.getMonth() + 1).padStart(2, "0");
+        const y = today.getFullYear();
+
+        document.getElementById("dia1").value = d;
+        document.getElementById("mes1").value = m;
+        document.getElementById("ano1").value = y;
+
+        document.getElementById("dia2").value = d;
+        document.getElementById("mes2").value = m;
+        document.getElementById("ano2").value = y;
+      }
+
+      setToday();
+    </script>
+  </body>
+</html>
